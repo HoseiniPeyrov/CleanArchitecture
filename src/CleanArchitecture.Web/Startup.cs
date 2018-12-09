@@ -61,7 +61,7 @@ namespace CleanArchitecture.Web
             // TODO: Add Registry Classes to eliminate reference to Infrastructure
             Assembly webAssembly = Assembly.GetExecutingAssembly();
             Assembly coreAssembly = Assembly.GetAssembly(typeof(BaseEntity));
-            Assembly infrastructureAssembly = Assembly.GetAssembly(typeof(EfRepository)); // TODO: Move to Infrastucture Registry
+            Assembly infrastructureAssembly = Assembly.GetAssembly(typeof(Repository)); // TODO: Move to Infrastucture Registry
             builder.RegisterAssemblyTypes(webAssembly, coreAssembly, infrastructureAssembly).AsImplementedInterfaces();
 
             IContainer applicationContainer = builder.Build();
